@@ -23,6 +23,13 @@ void outputArrayData(double* arr, int size) {
     cout << "---- Output completed ----" << endl;
 }
 
+double sumArray(double* arr, int size) {
+    double sum = 0.0;
+    for (int i = 0; i < size; ++i) {
+        sum += *(arr + i);
+    }
+    return sum;
+}
 
 void enterArrayData(double* arr, int size);
 void outputArrayData(double* arr, int size);
@@ -35,6 +42,10 @@ int main(){
     enterArrayData(myArray, ARRAY_SIZE);
     
     outputArrayData(myArray, ARRAY_SIZE);
+    
+    double total = sumArray(myArray, ARRAY_SIZE);
+    cout << "---- Sum calculation result ----" << endl;
+    cout << "Total sum of array elements: " << total << endl;
 
     delete[] myArray;
 
