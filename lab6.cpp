@@ -13,25 +13,28 @@ void enterArrayData(double* arr, int size) {
     cout << "---- Array data entry completed ----" << endl;
 }
 
+void outputArrayData(double* arr, int size) {
+    cout << "---- Array data output ----" << endl;
+    cout << "Array elements: ";
+    for (int i = 0; i < size; ++i) {
+        cout << *(arr + i) << " ";
+    }
+    cout << endl;
+    cout << "---- Output completed ----" << endl;
+}
+
+
 void enterArrayData(double* arr, int size);
 void outputArrayData(double* arr, int size);
 double sumArray(double* arr, int size);
 
 int main(){
 
- 
     double* myArray = new double[ARRAY_SIZE];
     
-
     enterArrayData(myArray, ARRAY_SIZE);
     
-
-    cout << "[Test] Entered array data: ";
-    for (int i = 0; i < ARRAY_SIZE; ++i) {
-        cout << *(myArray + i) << " ";
-    }
-    cout << endl;
-
+    outputArrayData(myArray, ARRAY_SIZE);
 
     delete[] myArray;
 
